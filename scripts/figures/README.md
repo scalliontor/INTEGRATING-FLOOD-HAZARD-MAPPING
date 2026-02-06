@@ -87,3 +87,43 @@
 ---
 
 *Tạo tự động bởi script `regenerate_all_figures.py`*
+
+---
+
+## 📊 NHÓM G: BIẾN ĐẦU VÀO (Input Features) - Trong `G_Inputs/`
+
+### Static Features (11 biến địa hình):
+
+| File | Biến | Mô tả | Đơn vị | Scale |
+|------|------|-------|--------|-------|
+| `G01_elev.png` | elev | Độ cao tuyệt đối | m | 0-1500 |
+| `G02_slope.png` | slope | Độ dốc địa hình | ° | 0-45 |
+| `G03_aspect.png` | aspect | Hướng dốc | ° | 0-360 |
+| `G04_curv.png` | curv | Độ cong địa hình | 1/m | ±0.5 |
+| `G05_relief.png` | relief | Độ chênh cao cục bộ (500m) | m | 0-500 |
+| `G06_twi.png` | twi | Chỉ số ẩm địa hình | - | 0-20 |
+| `G07_flow_acc.png` | flow_acc | Tích lũy dòng chảy | pixels | 0-10000 |
+| `G08_dist_water.png` | dist_water | Khoảng cách tới sông | m | 0-10000 |
+| `G09_water_mask.png` | water_mask | Mặt nạ thủy phần | 0/1 | Binary |
+| `G10_lulc.png` | lulc | Sử dụng đất (ESA WorldCover) | class | 0-10 |
+| `G11_precip_clim.png` | precip_clim | Lượng mưa TB năm | mm/year | 1500-3000 |
+
+### Rain Features (4 biến mưa động - Event 17/2025):
+
+| File | Biến | Mô tả | Đơn vị | Scale |
+|------|------|-------|--------|-------|
+| `G12_Rain_3D.png` | Rain_3D | Mưa 3 ngày | mm | 0-300 |
+| `G13_Rain_7D.png` | Rain_7D | Mưa 7 ngày | mm | 0-500 |
+| `G14_Rain_Max.png` | Rain_Max | Mưa cực đại 1 ngày | mm | 0-200 |
+| `G15_Rain_AM14.png` | Rain_AM14 | Độ ẩm tiền cảnh 14 ngày | mm | 0-200 |
+
+### Panel Views (Tổng hợp):
+
+| File | Mô tả |
+|------|-------|
+| `G00_All_Static_Panel.png` | Tất cả 11 biến địa hình trong 1 hình |
+| `G00_All_Rain_Panel.png` | Tất cả 4 biến mưa trong 1 hình |
+
+---
+
+*Tạo tự động bởi script `generate_input_maps.py`*
