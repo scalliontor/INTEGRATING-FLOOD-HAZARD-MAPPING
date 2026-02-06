@@ -22,27 +22,27 @@ Dưới đây là quy trình xử lý dữ liệu từ vệ tinh đến bản đ
 ```mermaid
 graph TD
     subgraph "1. Data Collection (Google Earth Engine)"
-        S1[Sentinel-1 SAR] -->|Pre-process| F[Flood Labels (19 Events)]
-        SRTM[SRTM DEM] -->|Terrain Analysis| Static[Static Features (11 bands)]
-        CHIRPS[CHIRPS Rainfall] -->|Time-series| Rain[Dynamic Rain (4 vars)]
+        S1["Sentinel-1 SAR"] -->|Pre-process| F["Flood Labels (19 Events)"]
+        SRTM["SRTM DEM"] -->|Terrain Analysis| Static["Static Features (11 bands)"]
+        CHIRPS["CHIRPS Rainfall"] -->|Time-series| Rain["Dynamic Rain (4 vars)"]
     end
 
     subgraph "2. Preprocessing (Python)"
-        F & Static & Rain -->|Extract Samples| CSV[Raw Dataset]
-        CSV -->|Hard Negative Mining| Clean[Training Set]
-        note1[Lấy mẫu Hard Negatives:<br/>Vùng trũng nhưng KHÔNG ngập<br/>để Model học được 'ca khó'] --> Clean
+        F & Static & Rain -->|Extract Samples| CSV["Raw Dataset"]
+        CSV -->|Hard Negative Mining| Clean["Training Set"]
+        note1["Lấy mẫu Hard Negatives:<br/>Vùng trũng nhưng KHÔNG ngập<br/>để Model học được 'ca khó'"] --> Clean
     end
 
     subgraph "3. Modeling (XGBoost)"
-        Clean -->|Monotonic Constraints| XGB[XGBoost Model]
-        XGB -->|Leave-One-Event-Out| CV[Cross-Validation]
-        CV -->|AUC = 0.96| Valid[Final Model]
+        Clean -->|Monotonic Constraints| XGB["XGBoost Model"]
+        XGB -->|Leave-One-Event-Out| CV["Cross-Validation"]
+        CV -->|"AUC = 0.96"| Valid["Final Model"]
     end
 
     subgraph "4. Interpretation & Application"
-        Valid -->|SHAP Values| Expl[Explainability]
-        Valid -->|Predict 2020| Map2020[Risk Map 2020]
-        Valid -->|RCP 4.5/8.5| Future[Climate Scenarios]
+        Valid -->|SHAP Values| Expl["Explainability"]
+        Valid -->|Predict 2020| Map2020["Risk Map 2020"]
+        Valid -->|RCP 4.5/8.5| Future["Climate Scenarios"]
     end
 ```
 
