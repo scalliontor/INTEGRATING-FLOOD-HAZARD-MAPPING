@@ -572,6 +572,9 @@ Thang đo hiện tại (0.2 / 0.4 / 0.6 / 0.8) là **TỐI ƯU** vì:
 | `03_RCP45_2100.tif` | Raster | 16.4 MB | Phân cấp 5 mức - RCP4.5 năm 2100 |
 | `04_RCP85_2100.tif` | Raster | 16.4 MB | Phân cấp 5 mức - RCP8.5 năm 2100 |
 | `Climate_Scenario_Comparison.png` | Image | 230 KB | Biểu đồ so sánh kịch bản |
+| `District_Risk_Change_Map.png` | Image | 1.2 MB | Bản đồ thay đổi nguy cơ theo Huyện |
+| `District_Risk_Analysis.csv` | Table | 5 KB | Bảng số liệu phân tích theo Huyện |
+| `District_Risk_Analysis.geojson` | Vector | 420 KB | File JSON không gian chứa thuộc tính rủi ro |
 
 ## 8.3. Giá trị Pixel trong các File TIF Phân cấp
 

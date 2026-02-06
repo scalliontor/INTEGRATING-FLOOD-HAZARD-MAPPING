@@ -26,7 +26,7 @@ Chúng ta không chỉ đơn thuần "nhập dữ liệu vào máy tính". Chún
 > *"Cơn lũ này được kích hoạt như thế nào?"*
 
 *   **Dữ liệu:** CHIRPS Daily Rainfall (Lượng mưa vệ tinh toàn cầu).
-*   **Phương pháp:** Vì mưa lũ có độ trễ, chúng ta không chỉ xem mưa ngày hôm nay. Chúng ta tính toán `Rain_3D` (kích hoạt nhanh), `Rain_7D` (tích lũy) và đặc biệt là `Rain_AM14` (Độ ẩm đất tiền cảnh - đất đã no nước chưa?).
+*   **Phương pháp:** Vì mưa lũ có độ trễ, chúng ta không chỉ xem mưa ngày hôm nay. Chúng ta tính toán `Rain_3D` (kích hoạt nhanh), `Rain_7D` (tích lũy), `Rain_Max` (cường độ đỉnh) và đặc biệt là `Rain_AM14` (Độ ẩm đất tiền cảnh - đất đã no nước chưa?).
 *   **Ý nghĩa:** Đây là yếu tố **ĐỘNG**. Nếu không có mưa, vùng trũng vẫn chỉ là vùng trũng khô ráo. Dữ liệu này giúp mô hình phân biệt được: "Tại sao cùng một thung lũng đó, năm ngoái không ngập mà năm nay lại ngập trắng?".
 
 ---
