@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Event-Based Flood Risk Mapping - Ha Tinh</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Event-Based Flood Risk Mapping - Ha Tinh</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#event-based-flood-risk-mapping---ha-tinh-province"
+id="toc-event-based-flood-risk-mapping---ha-tinh-province">🌊
+Event-Based Flood Risk Mapping - Ha Tinh Province</a></li>
+<li><a href="#tuyên-bố-dự-án-1-câu" id="toc-tuyên-bố-dự-án-1-câu">📋
+Tuyên Bố Dự Án (1 câu)</a></li>
+<li><a href="#mục-lục" id="toc-mục-lục">Mục Lục</a></li>
+<li><a href="#điểm-khác-biệt-so-với-bài-cũ"
+id="toc-điểm-khác-biệt-so-với-bài-cũ">1. Điểm Khác Biệt So Với Bài
+Cũ</a>
+<ul>
+<li><a href="#bài-cũ-static-susceptibility---ahpsvm"
+id="toc-bài-cũ-static-susceptibility---ahpsvm">1.1. Bài cũ (Static
+Susceptibility - AHP+SVM)</a></li>
+<li><a href="#bài-mới-dynamic-event-based-risk"
+id="toc-bài-mới-dynamic-event-based-risk">1.2. Bài mới (Dynamic
+Event-Based Risk)</a></li>
+<li><a href="#điểm-cốt-lõi" id="toc-điểm-cốt-lõi">1.3. Điểm cốt
+lõi</a></li>
+</ul></li>
+<li><a href="#cấu-trúc-dữ-liệu" id="toc-cấu-trúc-dữ-liệu">2. Cấu Trúc Dữ
+Liệu</a>
+<ul>
+<li><a href="#labels-từ-sentinel-1-19-bands-19-events"
+id="toc-labels-từ-sentinel-1-19-bands-19-events">2.1. Labels từ
+Sentinel-1 (19 bands = 19 events)</a></li>
+<li><a href="#static-features-11-bands"
+id="toc-static-features-11-bands">2.2. Static Features (11
+bands)</a></li>
+<li><a href="#dynamic-rainfall-features-76-bands-19-events-4-vars"
+id="toc-dynamic-rainfall-features-76-bands-19-events-4-vars">2.3.
+Dynamic Rainfall Features (76 bands = 19 events × 4 vars)</a></li>
+</ul></li>
+<li><a href="#cấu-trúc-thư-mục" id="toc-cấu-trúc-thư-mục">3. Cấu Trúc
+Thư Mục</a></li>
+<li><a href="#chi-tiết-scripts" id="toc-chi-tiết-scripts">4. Chi Tiết
+Scripts</a>
+<ul>
+<li><a href="#create_dataset.py---tạo-dataset-event-based"
+id="toc-create_dataset.py---tạo-dataset-event-based">4.1.
+<code>create_dataset.py</code> - Tạo Dataset Event-Based</a></li>
+<li><a href="#eda.py---làm-sạch-eda-cơ-bản"
+id="toc-eda.py---làm-sạch-eda-cơ-bản">4.2. <code>eda.py</code> - Làm
+Sạch + EDA Cơ Bản</a></li>
+<li><a href="#eda_adv.py---eda-nâng-cao"
+id="toc-eda_adv.py---eda-nâng-cao">4.3. <code>eda_adv.py</code> - EDA
+Nâng Cao</a></li>
+<li><a href="#train.py---train-loeo-gpu"
+id="toc-train.py---train-loeo-gpu">4.4. <code>train.py</code> - Train
+LOEO (GPU)</a></li>
+<li><a href="#final_analysis.py---shap-climate-scenario"
+id="toc-final_analysis.py---shap-climate-scenario">4.5.
+<code>final_analysis.py</code> - SHAP + Climate Scenario</a></li>
+</ul></li>
+<li><a href="#pipeline-thực-thi" id="toc-pipeline-thực-thi">5. Pipeline
+Thực Thi</a></li>
+<li><a href="#feature-set" id="toc-feature-set">6. Feature Set</a>
+<ul>
+<li><a href="#features-đang-dùng-đã-bỏ-water_mask"
+id="toc-features-đang-dùng-đã-bỏ-water_mask">6.1. 14 Features đang dùng
+(đã bỏ water_mask)</a></li>
+<li><a href="#tại-sao-bỏ-water_mask" id="toc-tại-sao-bỏ-water_mask">6.2.
+Tại sao bỏ water_mask?</a></li>
+</ul></li>
+<li><a href="#danh-sách-19-sự-kiện" id="toc-danh-sách-19-sự-kiện">7.
+Danh Sách 19 Sự Kiện</a></li>
+<li><a href="#kết-quả-đạt-được" id="toc-kết-quả-đạt-được">8. Kết Quả Đạt
+Được</a>
+<ul>
+<li><a href="#loeo-metrics-sau-khi-bỏ-water_mask"
+id="toc-loeo-metrics-sau-khi-bỏ-water_mask">8.1. LOEO Metrics (sau khi
+bỏ water_mask)</a></li>
+<li><a href="#feature-importance-top-5"
+id="toc-feature-importance-top-5">8.2. Feature Importance (Top
+5)</a></li>
+<li><a href="#climate-scenario-observation"
+id="toc-climate-scenario-observation">8.3. Climate Scenario
+Observation</a></li>
+</ul></li>
+<li><a href="#việc-còn-phải-làm" id="toc-việc-còn-phải-làm">9. Việc Còn
+Phải Làm</a>
+<ul>
+<li><a href="#đã-hoàn-thành" id="toc-đã-hoàn-thành">✅ Đã hoàn
+thành</a></li>
+<li><a href="#còn-thiếu-để-thành-paper"
+id="toc-còn-thiếu-để-thành-paper">🔲 Còn thiếu (để thành paper)</a></li>
+</ul></li>
+<li><a href="#thư-viện-yêu-cầu" id="toc-thư-viện-yêu-cầu">10. Thư Viện
+Yêu Cầu</a></li>
+</ul>
+</nav>
+<h1 id="event-based-flood-risk-mapping---ha-tinh-province">🌊
+Event-Based Flood Risk Mapping - Ha Tinh Province</h1>
+<blockquote>
+<p><strong>Data-driven Flood Risk Assessment theo từng sự kiện
+lũ</strong><br />
+Sentinel-1 + Dynamic Rainfall (CHIRPS) + XGBoost + SHAP</p>
+</blockquote>
+<p>📅 <strong>Cập nhật:</strong> 2026-02-05<br />
+📍 <strong>Khu vực:</strong> Hà Tĩnh, Việt Nam<br />
+🛰️ <strong>Dữ liệu:</strong> Sentinel-1 SAR (2016-2025), CHIRPS Daily,
+SRTM, ESA WorldCover</p>
+<hr />
+<h1 id="tuyên-bố-dự-án-1-câu">📋 Tuyên Bố Dự Án (1 câu)</h1>
+<blockquote>
+<p>Dự án xây dựng hệ thống đánh giá rủi ro ngập <strong>theo sự
+kiện</strong> cho tỉnh Hà Tĩnh bằng cách kết hợp nhãn ngập Sentinel-1
+(conservative, event-based) với địa hình–mặt phủ và <strong>đặc trưng
+mưa CHIRPS theo từng sự kiện</strong>. Mô hình XGBoost được đánh giá
+bằng <strong>Leave-One-Event-Out (LOEO)</strong> để kiểm tra khả năng dự
+báo cho một trận lũ chưa từng thấy. Kết quả được giải thích bằng SHAP và
+mở rộng để mô phỏng kịch bản <strong>mưa cực đoan tăng 20%</strong>.</p>
+</blockquote>
+<hr />
+<h1 id="mục-lục">Mục Lục</h1>
+<ol type="1">
+<li><a href="#1-điểm-khác-biệt-so-với-bài-cũ">Điểm Khác Biệt So Với Bài
+Cũ</a></li>
+<li><a href="#2-cấu-trúc-dữ-liệu">Cấu Trúc Dữ Liệu</a></li>
+<li><a href="#3-cấu-trúc-thư-mục">Cấu Trúc Thư Mục</a></li>
+<li><a href="#4-chi-tiết-scripts">Chi Tiết Scripts</a></li>
+<li><a href="#5-pipeline-thực-thi">Pipeline Thực Thi</a></li>
+<li><a href="#6-feature-set">Feature Set</a></li>
+<li><a href="#7-danh-sách-19-sự-kiện">Danh Sách 19 Sự Kiện</a></li>
+<li><a href="#8-kết-quả-đạt-được">Kết Quả Đạt Được</a></li>
+<li><a href="#9-việc-còn-phải-làm">Việc Còn Phải Làm</a></li>
+</ol>
+<hr />
+<h1 id="điểm-khác-biệt-so-với-bài-cũ">1. Điểm Khác Biệt So Với Bài
+Cũ</h1>
+<h2 id="bài-cũ-static-susceptibility---ahpsvm">1.1. Bài cũ (Static
+Susceptibility - AHP+SVM)</h2>
+<table>
+<thead>
+<tr>
+<th>Đặc điểm</th>
+<th>Bài cũ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biến đầu vào</td>
+<td>Chỉ <strong>tĩnh</strong> (DEM, slope, dist river…)</td>
+</tr>
+<tr>
+<td>Mưa</td>
+<td>Trung bình nhiều năm / Annual mean</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>Proxy từ AHP/heuristic (không phải lũ thực)</td>
+</tr>
+<tr>
+<td>Đầu ra</td>
+<td>“Điểm nhạy cảm” không gắn với thời điểm</td>
+</tr>
+<tr>
+<td>Câu hỏi không trả lời được</td>
+<td>“Mưa tăng 20% thì rủi ro tăng ở đâu?”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bài-mới-dynamic-event-based-risk">1.2. Bài mới (Dynamic
+Event-Based Risk)</h2>
+<table>
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th>Đặc điểm</th>
+<th>Bài mới</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biến đầu vào</td>
+<td><strong>Tĩnh + Động</strong> (Rain_3D, Rain_7D, Rain_Max,
+Rain_AM14)</td>
+</tr>
+<tr>
+<td>Mưa</td>
+<td><strong>Tổng mưa từng sự kiện</strong> từ CHIRPS</td>
+</tr>
+<tr>
+<td>Label</td>
+<td><strong>Ngập quan sát thực tế</strong> từ Sentinel-1</td>
+</tr>
+<tr>
+<td>Đầu ra</td>
+<td>Xác suất ngập P(x|event) + Expected frequency</td>
+</tr>
+<tr>
+<td>Khả năng mới</td>
+<td>Mô phỏng kịch bản BĐKH (Rain × 1.2)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="điểm-cốt-lõi">1.3. Điểm cốt lõi</h2>
+<p>Mỗi dòng dữ liệu có dạng:</p>
+<pre><code>(Pixel_i, Event_e)  →  [X_static(i), X_rain(i,e), y(i,e)]</code></pre>
+<p><strong>Cùng một pixel</strong> có thể: - Không ngập ở event mưa nhỏ
+- Ngập ở event mưa lớn</p>
+<p>⇒ Model buộc phải học <strong>“mưa × địa hình”</strong>, không thể
+chỉ học “vùng trũng”.</p>
+<hr />
+<h1 id="cấu-trúc-dữ-liệu">2. Cấu Trúc Dữ Liệu</h1>
+<h2 id="labels-từ-sentinel-1-19-bands-19-events">2.1. Labels từ
+Sentinel-1 (19 bands = 19 events)</h2>
+<pre><code>flood_baseline/HaTinh_Flood_Stack_19Events_FullLogic.tif
+├── Band 01: 01_2016_Lu_Ho_Ho (0/1)
+├── Band 02: 02_2016_Lu_T11_Dot2 (0/1)
+├── ...
+└── Band 19: 19_2025_Lu_T11 (0/1)</code></pre>
+<p><strong>Quy trình tạo label (conservative):</strong> 1. Sentinel-1
+VH, IW mode, DESCENDING orbit 2. Mask góc nghiêng (31°-45°) 3. Min
+composite theo event window 4. Focal median 50m (lọc speckle) 5.
+Threshold VH &lt; -19 dB 6. Slope mask &lt; 10° 7. <strong>Loại
+permanent water</strong> (ESA class 80) 8. Remove blobs &lt; 20
+pixels</p>
+<h2 id="static-features-11-bands">2.2. Static Features (11 bands)</h2>
+<pre><code>input/HaTinh_Static_Full_Features_11Bands.tif
+├── Band 01: elevation     → Độ cao (m)
+├── Band 02: slope         → Độ dốc (°)
+├── Band 03: aspect        → Hướng sườn (°)
+├── Band 04: curv_lap      → Độ cong Laplacian
+├── Band 05: relief_2km    → Chênh cao so với đáy thung lũng
+├── Band 06: twi           → Topographic Wetness Index
+├── Band 07: flow_acc      → Flow Accumulation
+├── Band 08: dist_water    → Khoảng cách đến mặt nước (m)
+├── Band 09: water_mask    → [ĐÃ BỎ khi train] Mask nước vĩnh cửu
+├── Band 10: lulc          → Land Use Land Cover (class)
+└── Band 11: precip_clim   → Mưa khí hậu (WorldClim BIO16)</code></pre>
+<h2 id="dynamic-rainfall-features-76-bands-19-events-4-vars">2.3.
+Dynamic Rainfall Features (76 bands = 19 events × 4 vars)</h2>
+<pre><code>input/HaTinh_Rain_Stack_CHIRPS_19Events_4Vars.tif
+├── 01_2016_Lu_Ho_Ho_Rain_3D    → Tổng mưa 3 ngày (kích hoạt lũ nhanh)
+├── 01_2016_Lu_Ho_Ho_Rain_7D    → Tổng mưa 7 ngày (tích nước hồ/sông)
+├── 01_2016_Lu_Ho_Ho_Rain_Max   → Ngày mưa lớn nhất trong 7 ngày
+├── 01_2016_Lu_Ho_Ho_Rain_AM14  → Độ ẩm đất trước lũ (14 ngày, có trọng số)
+├── ...
+└── 19_2025_Lu_T11_Rain_AM14</code></pre>
+<p><strong>Công thức Rain_AM14 (Antecedent Moisture):</strong></p>
+<pre><code>AM14 = Σ (Rain_day_i × 0.9^i)  với i = 1..14</code></pre>
+<p>Ngày hôm qua w=0.9, 14 ngày trước w≈0.2</p>
+<hr />
+<h1 id="cấu-trúc-thư-mục">3. Cấu Trúc Thư Mục</h1>
+<pre><code>flood risk/
+│
+├── 📄 README.md                                    # File này
+├── 📄 Event_based_Flood_Susceptibility_*.pdf       # Report PDF
+│
+├── 📁 scripts/                                     # ⭐ Code Python + Output
+│   ├── create_dataset.py                           # Tạo dataset event-based
+│   ├── eda.py                                      # Làm sạch + EDA cơ bản
+│   ├── eda_adv.py                                  # EDA nâng cao
+│   ├── train.py                                    # Train LOEO (GPU)
+│   ├── final_analysis.py                           # SHAP + Climate scenario
+│   │
+│   ├── HaTinh_EventBased_Training_Data_Final.csv   # Dataset gốc (~190k rows)
+│   ├── HaTinh_Training_Ready_Clean.csv             # Dataset đã clean (~156k rows)
+│   ├── LOEO_Metrics_NoWaterMask.csv                # Kết quả LOEO
+│   ├── XGBoost_Flood_Model_Final.json/.pkl         # Model đã train
+│   │
+│   └── *.png                                       # Các biểu đồ output
+│       ├── EDA_Hard_Negatives_Check.png
+│       ├── EDA_Rain_Signal_Check.png
+│       ├── EDA_Rain_Distribution_Per_Event.png
+│       ├── EDA_Terrain_Interaction_Heatmap.png
+│       ├── Feature_Importance_NoWaterMask.png
+│       ├── Final_SHAP_Summary.png
+│       ├── Final_SHAP_Rain7D.png
+│       └── Climate_Change_Impact.png
+│
+├── 📁 input/                                       # Dữ liệu đầu vào (GEE)
+│   ├── hatinh_input_feature.js                     # GEE: Tạo Static 11 bands
+│   ├── recip.js                                    # GEE: Tạo Rain 76 bands
+│   ├── HaTinh_Static_Full_Features_11Bands.tif     # ~207MB
+│   └── HaTinh_Rain_Stack_CHIRPS_19Events_4Vars.tif # ~113KB
+│
+├── 📁 flood_baseline/                              # Labels từ Sentinel-1
+│   ├── flood_baseline.js                           # GEE: Tạo label stack
+│   └── HaTinh_Flood_Stack_19Events_FullLogic.tif   # ~3MB
+│
+├── 📁 AOI_level2/                                  # Shapefile ranh giới huyện
+│   └── HaTinh_Districts_Level2.*                   # 13 huyện/TX/TP
+│
+├── 📁 docs/                                        # Tài liệu tham khảo
+└── 📁 venv/                                        # Python environment</code></pre>
+<hr />
+<h1 id="chi-tiết-scripts">4. Chi Tiết Scripts</h1>
+<h2 id="create_dataset.py---tạo-dataset-event-based">4.1.
+<code>create_dataset.py</code> - Tạo Dataset Event-Based</h2>
+<h3 id="mục-đích">Mục đích</h3>
+<p>Trích xuất samples từ rasters theo từng event với <strong>Hard
+Negative Mining</strong>.</p>
+<h3 id="input">Input</h3>
+<table>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flood_baseline/HaTinh_Flood_Stack_19Events_*.tif</code></td>
+<td>Labels (19 bands)</td>
+</tr>
+<tr>
+<td><code>input/HaTinh_Static_Full_Features_11Bands.tif</code></td>
+<td>Static features</td>
+</tr>
+<tr>
+<td><code>input/HaTinh_Rain_Stack_CHIRPS_19Events_4Vars.tif</code></td>
+<td>Rain features</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output">Output</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HaTinh_EventBased_Training_Data_Final.csv</code></td>
+<td>~190k rows</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chiến-lược-sampling">Chiến lược sampling</h3>
+<p><strong>Với mỗi event e (19 events):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Loại</th>
+<th>Số lượng</th>
+<th>Điều kiện</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Positive</strong></td>
+<td>5000</td>
+<td>y(i,e) = 1 (ngập)</td>
+</tr>
+<tr>
+<td><strong>Hard Negative</strong></td>
+<td>2500</td>
+<td>y=0, slope&lt;5°, dist_water&lt;1000m</td>
+</tr>
+<tr>
+<td><strong>Random Negative</strong></td>
+<td>2500</td>
+<td>y=0, ngoài hard zone</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hard Negative</strong> = vùng <strong>thấp trũng, gần sông
+nhưng KHÔNG ngập</strong> → buộc model học tinh tế hơn.</p>
+<h3 id="các-cột-trong-dataset">Các cột trong dataset</h3>
+<pre><code>Event_ID, Event_Name, X, Y, Label, Is_Hard_Neg,
+elev, slope, aspect, curv, relief, twi, flow_acc, dist_water, water_mask, lulc, precip_clim,
+Rain_3D, Rain_7D, Rain_Max, Rain_AM14</code></pre>
+<hr />
+<h2 id="eda.py---làm-sạch-eda-cơ-bản">4.2. <code>eda.py</code> - Làm
+Sạch + EDA Cơ Bản</h2>
+<h3 id="mục-đích-1">Mục đích</h3>
+<p>Loại bỏ NaN và vẽ EDA kiểm tra chất lượng data.</p>
+<h3 id="quy-trình">Quy trình</h3>
+<ol type="1">
+<li><code>dropna()</code> → giảm từ ~190k xuống ~156k rows</li>
+<li>Vẽ <strong>Hard Negatives Check</strong>: Boxplot slope/dist_water
+theo 3 nhóm</li>
+<li>Vẽ <strong>Rain Signal Check</strong>: Boxplot Rain_7D/AM14 theo
+Label</li>
+</ol>
+<h3 id="output-1">Output</h3>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HaTinh_Training_Ready_Clean.csv</code></td>
+<td>Dataset sạch</td>
+</tr>
+<tr>
+<td><code>EDA_Hard_Negatives_Check.png</code></td>
+<td>Kỳ vọng: Hard Neg có slope thấp, gần sông</td>
+</tr>
+<tr>
+<td><code>EDA_Rain_Signal_Check.png</code></td>
+<td>Kỳ vọng: Ngập có mưa cao hơn</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="eda_adv.py---eda-nâng-cao">4.3. <code>eda_adv.py</code> - EDA
+Nâng Cao</h2>
+<h3 id="plot-1-rain-distribution-per-event">Plot 1: Rain Distribution
+Per Event</h3>
+<p>Median Rain_7D của nhóm Ngập vs Không Ngập theo từng event.</p>
+<h3 id="plot-2-terrain-interaction-heatmap">Plot 2: Terrain Interaction
+Heatmap</h3>
+<p>Xác suất ngập thực tế trong lưới (Elevation bins × Slope bins).</p>
+<p>→ Giúp hiểu <strong>interaction</strong> giữa địa hình và ngập.</p>
+<hr />
+<h2 id="train.py---train-loeo-gpu">4.4. <code>train.py</code> - Train
+LOEO (GPU)</h2>
+<h3 id="mục-đích-2">Mục đích</h3>
+<p>Huấn luyện XGBoost với <strong>Leave-One-Event-Out</strong>
+validation.</p>
+<h3 id="quan-trọng-đã-bỏ-water_mask">⚠️ QUAN TRỌNG: Đã bỏ
+<code>water_mask</code></h3>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># BỎ &#39;water_mask&#39; khỏi features để tránh Data Leakage</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;elev&#39;</span>, <span class="st">&#39;slope&#39;</span>, <span class="st">&#39;aspect&#39;</span>, <span class="st">&#39;curv&#39;</span>, <span class="st">&#39;relief&#39;</span>, <span class="st">&#39;twi&#39;</span>, <span class="st">&#39;flow_acc&#39;</span>, <span class="st">&#39;dist_water&#39;</span>, </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;lulc&#39;</span>, <span class="st">&#39;precip_clim&#39;</span>,  <span class="co"># ← Đã bỏ &#39;water_mask&#39;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Rain_3D&#39;</span>, <span class="st">&#39;Rain_7D&#39;</span>, <span class="st">&#39;Rain_Max&#39;</span>, <span class="st">&#39;Rain_AM14&#39;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>]  <span class="co"># 14 features</span></span></code></pre></div>
+<h3 id="loeo-validation">LOEO Validation</h3>
+<pre><code>Với 19 events:
+  For e in [1..19]:
+    Train trên 18 events (tất cả trừ e)
+    Test trên event e (chưa từng thấy)
+    → Tính AUC, Precision, Recall, F1</code></pre>
+<h3 id="hyperparameters">Hyperparameters</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n_estimators</td>
+<td>500</td>
+</tr>
+<tr>
+<td>max_depth</td>
+<td>8</td>
+</tr>
+<tr>
+<td>learning_rate</td>
+<td>0.05</td>
+</tr>
+<tr>
+<td>tree_method</td>
+<td>hist</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>cuda</strong> (GPU)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-2">Output</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOEO_Metrics_NoWaterMask.csv</code></td>
+<td>Metrics của 19 events</td>
+</tr>
+<tr>
+<td><code>Feature_Importance_NoWaterMask.png</code></td>
+<td>Importance trung bình</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="final_analysis.py---shap-climate-scenario">4.5.
+<code>final_analysis.py</code> - SHAP + Climate Scenario</h2>
+<h3 id="phần-1-train-final-model">Phần 1: Train Final Model</h3>
+<p>Train trên <strong>toàn bộ data</strong> (không split) để có model
+mạnh nhất.</p>
+<h3 id="phần-2-lưu-model">Phần 2: Lưu Model</h3>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON (nhẹ, tương thích)</td>
+<td><code>XGBoost_Flood_Model_Final.json</code></td>
+</tr>
+<tr>
+<td>Pickle (tiện Python)</td>
+<td><code>XGBoost_Flood_Model_Final.pkl</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="phần-3-shap-analysis">Phần 3: SHAP Analysis</h3>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> shap.TreeExplainer(model)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>shap_values <span class="op">=</span> explainer.shap_values(X)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Final_SHAP_Summary.png</code></td>
+<td>Beeswarm global importance</td>
+</tr>
+<tr>
+<td><code>Final_SHAP_Rain7D.png</code></td>
+<td>Dependence plot Rain_7D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phần-4-climate-scenario-mưa-20">Phần 4: Climate Scenario (Mưa
++20%)</h3>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> [<span class="st">&#39;Rain_3D&#39;</span>, <span class="st">&#39;Rain_7D&#39;</span>, <span class="st">&#39;Rain_Max&#39;</span>, <span class="st">&#39;Rain_AM14&#39;</span>]:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    X_scenario[col] <span class="op">=</span> X_scenario[col] <span class="op">*</span> <span class="fl">1.2</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>prob_baseline <span class="op">=</span> model.predict_proba(X)[:, <span class="dv">1</span>]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>prob_scenario <span class="op">=</span> model.predict_proba(X_scenario)[:, <span class="dv">1</span>]</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ΔP <span class="op">=</span> prob_scenario <span class="op">-</span> prob_baseline</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Climate_Change_Impact.png</code></td>
+<td>Bar chart ΔP theo event</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="pipeline-thực-thi">5. Pipeline Thực Thi</h1>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> scripts/</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Bước 1: Tạo dataset (nếu chưa có)</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> create_dataset.py</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Bước 2: Clean + EDA cơ bản</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> eda.py</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Bước 3: EDA nâng cao (optional)</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> eda_adv.py</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Bước 4: Train LOEO</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> train.py</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Bước 5: SHAP + Climate Scenario</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> final_analysis.py</span></code></pre></div>
+<hr />
+<h1 id="feature-set">6. Feature Set</h1>
+<h2 id="features-đang-dùng-đã-bỏ-water_mask">6.1. 14 Features đang dùng
+(đã bỏ water_mask)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tên</th>
+<th>Loại</th>
+<th>Nguồn</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>elev</td>
+<td>Static</td>
+<td>SRTM</td>
+<td>Độ cao (m)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>slope</td>
+<td>Static</td>
+<td>SRTM</td>
+<td>Độ dốc (°)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>aspect</td>
+<td>Static</td>
+<td>SRTM</td>
+<td>Hướng sườn (°)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>curv</td>
+<td>Static</td>
+<td>SRTM</td>
+<td>Độ cong Laplacian</td>
+</tr>
+<tr>
+<td>5</td>
+<td>relief</td>
+<td>Static</td>
+<td>SRTM</td>
+<td>Chênh cao so với thung lũng</td>
+</tr>
+<tr>
+<td>6</td>
+<td>twi</td>
+<td>Static</td>
+<td>HydroSHEDS</td>
+<td>Topographic Wetness Index</td>
+</tr>
+<tr>
+<td>7</td>
+<td>flow_acc</td>
+<td>Static</td>
+<td>HydroSHEDS</td>
+<td>Flow Accumulation</td>
+</tr>
+<tr>
+<td>8</td>
+<td>dist_water</td>
+<td>Static</td>
+<td>ESA</td>
+<td>Khoảng cách đến mặt nước</td>
+</tr>
+<tr>
+<td>9</td>
+<td>lulc</td>
+<td>Static</td>
+<td>ESA</td>
+<td>Land Use (categorical)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>precip_clim</td>
+<td>Static</td>
+<td>WorldClim</td>
+<td>Mưa khí hậu BIO16</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Rain_3D</td>
+<td><strong>Dynamic</strong></td>
+<td>CHIRPS</td>
+<td>Tổng mưa 3 ngày</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Rain_7D</td>
+<td><strong>Dynamic</strong></td>
+<td>CHIRPS</td>
+<td>Tổng mưa 7 ngày</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Rain_Max</td>
+<td><strong>Dynamic</strong></td>
+<td>CHIRPS</td>
+<td>Mưa max 1 ngày trong 7D</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Rain_AM14</td>
+<td><strong>Dynamic</strong></td>
+<td>CHIRPS</td>
+<td>Độ ẩm đất trước lũ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tại-sao-bỏ-water_mask">6.2. Tại sao bỏ water_mask?</h2>
+<p><strong>Vấn đề Data Leakage:</strong> - <code>water_mask</code> =
+permanent water (sông/hồ) từ ESA - Label đã được tạo bằng cách
+<strong>trừ đi</strong> permanent water - ⇒ water_mask = 1 → Label chắc
+chắn = 0 (shortcut!)</p>
+<p><strong>Sau khi bỏ:</strong> - Feature importance trở về hợp lý -
+<code>elev</code>, <code>dist_water</code>, <code>Rain_7D</code> lên top
+- Model học đúng quan hệ thực</p>
+<hr />
+<h1 id="danh-sách-19-sự-kiện">7. Danh Sách 19 Sự Kiện</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Tên</th>
+<th>T0 (Start)</th>
+<th>Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>2016_Lu_Ho_Ho</td>
+<td>2016-10-10</td>
+<td>10-25/10</td>
+</tr>
+<tr>
+<td>02</td>
+<td>2016_Lu_T11_Dot2</td>
+<td>2016-10-28</td>
+<td>28/10-15/11</td>
+</tr>
+<tr>
+<td>03</td>
+<td>2017_Bao_So_2</td>
+<td>2017-07-14</td>
+<td>14-30/07</td>
+</tr>
+<tr>
+<td>04</td>
+<td>2017_ATND_Sau_Bao</td>
+<td>2017-10-05</td>
+<td>05-25/10</td>
+</tr>
+<tr>
+<td>05</td>
+<td>2018_Mua_T7</td>
+<td>2018-07-12</td>
+<td>12-30/07</td>
+</tr>
+<tr>
+<td>06</td>
+<td>2019_Lu_Dau_Mua</td>
+<td>2019-08-30</td>
+<td>30/08-15/09</td>
+</tr>
+<tr>
+<td>07</td>
+<td>2019_Lu_T10</td>
+<td>2019-10-10</td>
+<td>10-25/10</td>
+</tr>
+<tr>
+<td>08</td>
+<td>2020_Bao_So_5</td>
+<td>2020-09-15</td>
+<td>15-30/09</td>
+</tr>
+<tr>
+<td>09</td>
+<td>2020_Lu_Dau_T10</td>
+<td>2020-10-02</td>
+<td>02-14/10</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>2020_DAI_HONG_THUY</strong></td>
+<td>2020-10-15</td>
+<td>15/10-05/11</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2021_Lu_T9</td>
+<td>2021-09-19</td>
+<td>19/09-05/10</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2021_Lu_T10_Dot1</td>
+<td>2021-10-12</td>
+<td>12-25/10</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2021_Lu_T10_Dot2</td>
+<td>2021-10-24</td>
+<td>24/10-05/11</td>
+</tr>
+<tr>
+<td>14</td>
+<td>2022_Bao_Noru</td>
+<td>2022-09-24</td>
+<td>24/09-15/10</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2023_Lu_T9</td>
+<td>2023-09-22</td>
+<td>22/09-07/10</td>
+</tr>
+<tr>
+<td>16</td>
+<td>2023_Lu_Vu_Quang</td>
+<td>2023-10-25</td>
+<td>25/10-15/11</td>
+</tr>
+<tr>
+<td>17</td>
+<td>2024_Sau_Bao_Soulik</td>
+<td>2024-09-15</td>
+<td>15/09-05/10</td>
+</tr>
+<tr>
+<td>18</td>
+<td>2025_Lu_Bat_Thuong_T5</td>
+<td>2025-05-15</td>
+<td>15/05-05/06</td>
+</tr>
+<tr>
+<td>19</td>
+<td>2025_Lu_T11</td>
+<td>2025-10-25</td>
+<td>25/10-15/11</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="kết-quả-đạt-được">8. Kết Quả Đạt Được</h1>
+<h2 id="loeo-metrics-sau-khi-bỏ-water_mask">8.1. LOEO Metrics (sau khi
+bỏ water_mask)</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Giá trị trung bình</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AUC</strong></td>
+<td>~0.90</td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>~0.86</td>
+</tr>
+<tr>
+<td><strong>Recall</strong></td>
+<td>~0.84</td>
+</tr>
+<tr>
+<td><strong>F1</strong></td>
+<td>~0.85</td>
+</tr>
+</tbody>
+</table>
+<h2 id="feature-importance-top-5">8.2. Feature Importance (Top 5)</h2>
+<ol type="1">
+<li><strong>lulc</strong> - Land use (tác động mạnh)</li>
+<li><strong>dist_water</strong> - Khoảng cách sông</li>
+<li><strong>elev</strong> - Độ cao</li>
+<li><strong>Rain_7D</strong> - Mưa 7 ngày</li>
+<li><strong>relief</strong> - Chênh cao địa hình</li>
+</ol>
+<h2 id="climate-scenario-observation">8.3. Climate Scenario
+Observation</h2>
+<p>⚠️ <strong>Lưu ý quan trọng:</strong> - Một số events có ΔP âm (giảm
+rủi ro) → không thể kết luận theo mean - Cần aggregation đúng: chỉ tính
+trên <strong>floodplain/lowland</strong> hoặc tính <strong>% diện tích
+&gt; threshold</strong></p>
+<hr />
+<h1 id="việc-còn-phải-làm">9. Việc Còn Phải Làm</h1>
+<h2 id="đã-hoàn-thành">✅ Đã hoàn thành</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Event-based labels sạch
+(19 events)</label></li>
+<li><label><input type="checkbox" checked="" />Static + Rainfall
+features stack</label></li>
+<li><label><input type="checkbox" checked="" />Dataset + Hard Negatives
+Mining</label></li>
+<li><label><input type="checkbox" checked="" />LOEO training + metrics
+mạnh</label></li>
+<li><label><input type="checkbox" checked="" />Xử lý Data Leakage (bỏ
+water_mask)</label></li>
+<li><label><input type="checkbox" checked="" />SHAP summary +
+dependence</label></li>
+<li><label><input type="checkbox" checked="" />EDA terrain
+interaction</label></li>
+<li><label><input type="checkbox" checked="" />Climate scenario (Rain
++20%)</label></li>
+</ul>
+<h2 id="còn-thiếu-để-thành-paper">🔲 Còn thiếu (để thành paper)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" /><strong>SHAP interaction plots đúng
+chuẩn</strong></label>
+<ul>
+<li>Rain_7D vs SHAP colored by elev/dist_water</li>
+</ul></li>
+<li><label><input type="checkbox" /><strong>Climate aggregation đúng
+policy</strong></label>
+<ul>
+<li>Δ% area high-risk (P &gt; 0.7) theo event</li>
+<li>Hoặc chỉ tính trên lowland mask</li>
+</ul></li>
+<li><label><input type="checkbox" /><strong>Spatial
+outputs</strong></label>
+<ul>
+<li>Map P(x|e) cho vài event tiêu biểu</li>
+<li>Map Expected Frequency / Exceedance</li>
+</ul></li>
+<li><label><input type="checkbox" /><strong>Zonal
+statistics</strong></label>
+<ul>
+<li>Top 10 huyện/xã rủi ro cao</li>
+<li>Top 10 tăng mạnh nhất khi Rain +20%</li>
+</ul></li>
+</ul>
+<hr />
+<h1 id="thư-viện-yêu-cầu">10. Thư Viện Yêu Cầu</h1>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode txt"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>numpy pandas rasterio tqdm</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>xgboost scikit-learn</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>matplotlib seaborn shap</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>geopandas rasterstats (cho zonal)</span></code></pre></div>
+<hr />
+<p><em>Cập nhật: 2026-02-05</em></p>
+</body>
+</html>

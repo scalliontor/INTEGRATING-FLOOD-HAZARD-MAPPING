@@ -1,0 +1,11 @@
+# System & Environment
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Large Data Files (>100MB)
+input/HaTinh_Static_Full_Features_11Bands.tif
+
+# Optional: Ignore other large temporary binaries if needed
+# (The other large files found were inside venv, which is already ignored)

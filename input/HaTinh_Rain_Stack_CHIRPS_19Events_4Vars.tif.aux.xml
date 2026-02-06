@@ -1,0 +1,281 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>01_2016_Lu_Ho_Ho_Rain_3D</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>0</HistMin>
+        <HistMax>0</HistMax>
+        <BucketCount>532</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>241|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">0</MDI>
+      <MDI key="STATISTICS_MEAN">0</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">0</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">45.3</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="2">
+    <Description>01_2016_Lu_Ho_Ho_Rain_7D</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>21.17615572671245</HistMin>
+        <HistMax>258.0532964064662</HistMax>
+        <BucketCount>532</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>2|1|2|1|1|1|1|1|2|2|0|1|0|4|1|1|0|0|0|2|0|0|0|1|0|1|1|1|1|0|0|0|0|0|0|2|2|1|2|1|0|3|2|0|0|2|1|1|0|0|1|3|1|1|0|0|0|4|0|2|1|2|2|1|1|3|1|4|3|1|2|2|2|0|2|2|2|3|1|2|1|2|1|1|0|2|0|0|1|2|3|3|3|2|0|0|0|2|1|0|1|1|0|1|1|1|0|1|1|0|1|1|1|2|0|3|0|2|0|0|0|0|2|0|0|0|1|0|0|1|1|0|2|0|1|0|0|0|1|0|1|0|2|0|2|0|0|0|1|1|0|0|1|0|1|0|0|2|1|0|0|0|1|0|1|0|0|1|1|0|0|0|1|0|1|0|0|1|0|1|1|0|2|0|0|2|1|0|0|1|0|0|0|0|1|1|2|0|1|1|1|1|0|0|1|0|0|1|2|0|0|1|1|2|0|0|1|0|0|0|0|0|0|0|0|0|2|0|0|1|0|0|0|1|0|1|0|0|0|0|0|0|1|0|0|1|0|0|0|0|0|0|0|0|0|0|1|0|0|1|0|0|0|1|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|1|0|1|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|1|0|0|0|0|0|1|1|0|0|0|0|0|0|1|0|0|0|0|1|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|1|0|1|0|0|0|0|0|0|1|0|0|1|0|1|0|1|2|0|0|1|0|0|0|0|0|0|0|2|1|1|1|0|0|0|1|0|0|1|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|1|0|0|0|0|1|1|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|1|0|0|1|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">257.83108520508</MDI>
+      <MDI key="STATISTICS_MEAN">89.149110097608</MDI>
+      <MDI key="STATISTICS_MINIMUM">21.398366928101</MDI>
+      <MDI key="STATISTICS_STDDEV">58.131152808328</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">45.3</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="3">
+    <Description>01_2016_Lu_Ho_Ho_Rain_Max</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>20.1941750390189</HistMin>
+        <HistMax>151.4279334204537</HistMax>
+        <BucketCount>532</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|0|0|2|2|0|0|0|3|0|2|0|1|0|0|1|0|2|1|1|1|0|1|1|0|0|3|2|0|1|1|0|0|0|0|0|0|1|1|0|0|0|0|0|0|0|1|0|1|1|0|1|0|1|2|0|0|0|0|0|0|1|1|0|1|1|3|4|1|1|0|1|1|1|1|0|1|2|1|0|2|0|0|2|1|2|1|1|2|0|2|0|1|1|1|0|3|0|2|0|1|0|0|0|0|2|2|1|0|0|1|0|2|0|2|2|0|1|1|0|2|1|0|1|2|1|0|2|1|2|0|0|2|1|0|0|1|1|0|1|0|0|0|0|0|0|1|0|0|0|1|1|0|0|0|0|1|1|1|0|0|1|0|0|1|2|0|2|0|0|1|1|1|0|0|0|0|0|0|0|1|0|0|3|2|1|0|0|0|1|0|0|1|1|0|0|1|0|1|0|0|0|1|0|1|0|2|0|2|0|1|2|0|0|2|1|0|1|1|0|0|0|0|1|0|0|1|0|0|0|0|0|3|0|0|0|1|0|1|0|0|2|1|0|0|2|0|0|0|0|0|0|2|1|0|1|0|0|0|0|2|0|0|3|0|0|0|0|0|1|0|1|1|0|0|0|1|0|0|0|0|1|0|0|0|0|2|0|1|1|0|0|0|0|1|0|0|0|0|1|0|0|0|0|2|0|1|0|0|0|0|0|0|3|0|0|2|0|2|0|0|0|0|1|1|0|0|1|0|1|0|0|0|1|0|0|1|1|0|1|0|0|1|0|1|0|0|0|0|0|0|0|1|1|1|1|1|1|0|0|0|0|0|1|0|2|1|1|0|0|0|1|0|1|0|0|1|0|1|1|0|0|0|1|0|0|0|1|0|1|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|2|0|0|0|0|1|0|0|1|0|0|0|0|1|1|1|0|0|0|0|0|1|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|1|1|0|1|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">151.3048248291</MDI>
+      <MDI key="STATISTICS_MEAN">67.51238238861</MDI>
+      <MDI key="STATISTICS_MINIMUM">20.317283630371</MDI>
+      <MDI key="STATISTICS_STDDEV">31.91910718908</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">45.3</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="4">
+    <Description>01_2016_Lu_Ho_Ho_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="5">
+    <Description>02_2016_Lu_T11_Dot2_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="6">
+    <Description>02_2016_Lu_T11_Dot2_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="7">
+    <Description>02_2016_Lu_T11_Dot2_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="8">
+    <Description>02_2016_Lu_T11_Dot2_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="9">
+    <Description>03_2017_Bao_So_2_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="10">
+    <Description>03_2017_Bao_So_2_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="11">
+    <Description>03_2017_Bao_So_2_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="12">
+    <Description>03_2017_Bao_So_2_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="13">
+    <Description>04_2017_ATND_Sau_Bao_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="14">
+    <Description>04_2017_ATND_Sau_Bao_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="15">
+    <Description>04_2017_ATND_Sau_Bao_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="16">
+    <Description>04_2017_ATND_Sau_Bao_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="17">
+    <Description>05_2018_Mua_T7_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="18">
+    <Description>05_2018_Mua_T7_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="19">
+    <Description>05_2018_Mua_T7_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="20">
+    <Description>05_2018_Mua_T7_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="21">
+    <Description>06_2019_Lu_Dau_Mua_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="22">
+    <Description>06_2019_Lu_Dau_Mua_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="23">
+    <Description>06_2019_Lu_Dau_Mua_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="24">
+    <Description>06_2019_Lu_Dau_Mua_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="25">
+    <Description>07_2019_Lu_T10_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="26">
+    <Description>07_2019_Lu_T10_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="27">
+    <Description>07_2019_Lu_T10_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="28">
+    <Description>07_2019_Lu_T10_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="29">
+    <Description>08_2020_Bao_So_5_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="30">
+    <Description>08_2020_Bao_So_5_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="31">
+    <Description>08_2020_Bao_So_5_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="32">
+    <Description>08_2020_Bao_So_5_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="33">
+    <Description>09_2020_Lu_Dau_T10_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="34">
+    <Description>09_2020_Lu_Dau_T10_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="35">
+    <Description>09_2020_Lu_Dau_T10_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="36">
+    <Description>09_2020_Lu_Dau_T10_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="37">
+    <Description>10_2020_DAI_HONG_THUY_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="38">
+    <Description>10_2020_DAI_HONG_THUY_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="39">
+    <Description>10_2020_DAI_HONG_THUY_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="40">
+    <Description>10_2020_DAI_HONG_THUY_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="41">
+    <Description>11_2021_Lu_T9_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="42">
+    <Description>11_2021_Lu_T9_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="43">
+    <Description>11_2021_Lu_T9_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="44">
+    <Description>11_2021_Lu_T9_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="45">
+    <Description>12_2021_Lu_T10_Dot1_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="46">
+    <Description>12_2021_Lu_T10_Dot1_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="47">
+    <Description>12_2021_Lu_T10_Dot1_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="48">
+    <Description>12_2021_Lu_T10_Dot1_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="49">
+    <Description>13_2021_Lu_T10_Dot2_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="50">
+    <Description>13_2021_Lu_T10_Dot2_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="51">
+    <Description>13_2021_Lu_T10_Dot2_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="52">
+    <Description>13_2021_Lu_T10_Dot2_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="53">
+    <Description>14_2022_Bao_Noru_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="54">
+    <Description>14_2022_Bao_Noru_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="55">
+    <Description>14_2022_Bao_Noru_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="56">
+    <Description>14_2022_Bao_Noru_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="57">
+    <Description>15_2023_Lu_T9_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="58">
+    <Description>15_2023_Lu_T9_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="59">
+    <Description>15_2023_Lu_T9_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="60">
+    <Description>15_2023_Lu_T9_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="61">
+    <Description>16_2023_Lu_Vu_Quang_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="62">
+    <Description>16_2023_Lu_Vu_Quang_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="63">
+    <Description>16_2023_Lu_Vu_Quang_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="64">
+    <Description>16_2023_Lu_Vu_Quang_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="65">
+    <Description>17_2024_Sau_Bao_Soulik_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="66">
+    <Description>17_2024_Sau_Bao_Soulik_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="67">
+    <Description>17_2024_Sau_Bao_Soulik_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="68">
+    <Description>17_2024_Sau_Bao_Soulik_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="69">
+    <Description>18_2025_Lu_Bat_Thuong_T5_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="70">
+    <Description>18_2025_Lu_Bat_Thuong_T5_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="71">
+    <Description>18_2025_Lu_Bat_Thuong_T5_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="72">
+    <Description>18_2025_Lu_Bat_Thuong_T5_Rain_AM14</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="73">
+    <Description>19_2025_Lu_T11_Rain_3D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="74">
+    <Description>19_2025_Lu_T11_Rain_7D</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="75">
+    <Description>19_2025_Lu_T11_Rain_Max</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="76">
+    <Description>19_2025_Lu_T11_Rain_AM14</Description>
+  </PAMRasterBand>
+</PAMDataset>
